@@ -1,40 +1,44 @@
-我想设计一个现代化的网页,来指导用户安装openclaw
-网页上有一些中国电信天翼云的元素,底部是园区电信支持团队
+# OpenClaw 安装指南
 
-分为几个板块
-1\领取天翼云电脑免费领取1个月和2500万token
-扫二维码(见项目下的文件 领取云电脑.jpg)
+苏州工业园区天翼云 AI 助手快速上手指南，零基础也能轻松搞定。
 
-2\自己动手一步步装虾
-https://waytoagi.feishu.cn/wiki/PchGw7xkzikprvk26gLctxJ2nBc
-提醒用户如果把龙虾装在自己的主用或者公司电脑有一定的安全风险,推荐用户在领取的天翼云电脑上安装(跳转到第三步)
-基于这篇文章的内容,可以按照mac用户和windows用户区分两个子入口.将配置等其他内容删除
+**在线访问：** https://echobyte.cn:18189
 
-3\通过程序自动装虾
-可以在自己电脑上装,但推荐在刚领取的天翼云电脑上装,这样更安全,在云电脑上装之前,提醒用户先获取免费赠送的token(在第4步)
-使用https://oneclaw.cn/ 提供的安装程序,直接在我的页面上根据不同系统提供下载(使用https://oneclaw.cn上的下载地址)
-装的是最新版本龙虾
-装完后,提示用户配置api,见文件夹下的image.png
-如果使用天翼云云电脑赠送的token
-接口地址baseUrl:  "https://yilian.ctyun.cn/api/v3", 模型id: "ep-20260131221655-t48nr",api密钥就是第4步保存好的key
-如果使用天翼云息壤赠送的token
-接口地址baseUrl:  "https://wishub-x6.ctyun.cn/v1", 模型id和api密钥根据第4步息壤的笔记来,建议选择glm5或者doubao2.0
+## 功能概览
 
+本站提供 OpenClaw（小龙虾）的一站式安装引导，包含以下板块：
 
-4\免费获得天翼云token
-免费2500万token之一:天翼云电脑自带的token
-先不要通过程序安装最新版本龙虾,先点击云电脑桌面的“openclaw进入应用”,点击“配置”,点击右下角“原始”
-把apikey复制保存好,然后开始装龙虾     
-例如以下这样: "apiKey":"ZDEyMGY4YTQtMjZiMi00MGQ3LWEzYWQtNTlhOThlODUxMmI1OuaJrOW3njFiNA=="                                      
+1. **免费领取天翼云电脑** — 扫码领取 4核8G 云电脑 + 2500万 Token
+2. **手动安装 OpenClaw** — Mac / Windows 分步教程
+3. **一键安装（推荐）** — 通过 OneClaw 桌面程序自动安装
+4. **免费获取 Token** — 天翼云电脑自带 Token + 息壤平台 Token
+5. **配置飞书插件** — 让 OpenClaw 接入飞书办公
+6. **配置及使用龙虾** — 即将推出
 
-免费2500万tonen之二:天翼云息壤,见下面这篇笔记
-【金山文档 | WPS云文档】 ctyun正规大模型API，速薅！！！
-https://www.kdocs.cn/l/cpTaVsNkpouo
+## 本地运行
 
-5\配置飞书
-参考文档:https://bytedance.larkoffice.com/docx/MFK7dDFLFoVlOGxWCv5cTXKmnMh
-我们的页面上显示关键点,主要点是几个安装命令(区分不同系统)
-以及windows用户看不到二维码,需要先安装Cmder
+```bash
+cd app
+npm install
+npm run dev
+```
 
-6\配置及使用龙虾
-留空
+## 构建部署
+
+```bash
+cd app
+npm run build
+node server.mjs
+```
+
+服务默认运行在 `https://0.0.0.0:18189`（需配置 SSL 证书）。
+
+## 技术栈
+
+- React + Vite
+- 纯静态，无需后端
+- Node.js HTTPS 静态服务器
+
+## 支持
+
+苏州园区电信支持团队 提供技术支持及企业上门培训服务
