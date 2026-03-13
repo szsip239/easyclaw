@@ -19,9 +19,10 @@ const MIME = {
   '.ico': 'image/x-icon',
 };
 
+const CERT_DIR = process.env.CERT_DIR || path.join(__dirname, 'cert');
 const options = {
-  key: fs.readFileSync('/Users/clawdbot/hostdb/teamclaw/nginx/cert/echobyte.cn.key'),
-  cert: fs.readFileSync('/Users/clawdbot/hostdb/teamclaw/nginx/cert/echobyte.cn_bundle.crt'),
+  key: fs.readFileSync(path.join(CERT_DIR, 'echobyte.cn.key')),
+  cert: fs.readFileSync(path.join(CERT_DIR, 'echobyte.cn_bundle.crt')),
 };
 
 https.createServer(options, (req, res) => {
